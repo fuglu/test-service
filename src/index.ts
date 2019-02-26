@@ -45,7 +45,9 @@ const shutdown = async () => {
     logger.info("Closing server");
     server.close(() => {
       logger.info("Closed server");
-      process.exit(0);
+      setTimeout(() => {
+        process.exit(0);
+      }, 1000000);
     });
   }
 };
