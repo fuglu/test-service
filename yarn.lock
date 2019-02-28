@@ -181,13 +181,6 @@
   dependencies:
     "@types/node" "*"
 
-"@types/consul@^0.23.33":
-  version "0.23.33"
-  resolved "https://registry.yarnpkg.com/@types/consul/-/consul-0.23.33.tgz#ef9876fd75fdfed9b5b1afe320ccdb6456eb90d2"
-  integrity sha512-scpn9tiAh+IJXJipP2cpp0kJCUeWGOnoBfChGK+k2Zi0ifQMyPUHhG/d9J+Eyz4T/ZCn+J5yvq4Wr0b45TwACg==
-  dependencies:
-    "@types/node" "*"
-
 "@types/express-serve-static-core@*":
   version "4.16.1"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.16.1.tgz#35df7b302299a4ab138a643617bd44078e74d44e"
@@ -854,13 +847,6 @@ console-control-strings@^1.0.0, console-control-strings@~1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
   integrity sha1-PXz0Rk22RG6mRL9LOVB/mFEAjo4=
-
-consul@^0.34.1:
-  version "0.34.1"
-  resolved "https://registry.yarnpkg.com/consul/-/consul-0.34.1.tgz#b000638ad99db038fbb98e508c32d758bf598968"
-  integrity sha512-xCLBzPQBgnDgC2LdYnrT/Fc6PglRU6u7EBkpW0ExAx3Am/CdtKcP5o/3jfwOy7PBAwBqnJk3AYdwwGg+arriiQ==
-  dependencies:
-    papi "^0.29.0"
 
 content-disposition@0.5.2:
   version "0.5.2"
@@ -3499,11 +3485,6 @@ p-try@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
   integrity sha512-hMp0onDKIajHfIkdRk3P4CdCmErkYAxxDtP3Wx/4nZ3aGlau2VKh3mZpcuFkH27WQkL/3WBCPOktzA9ZOAnMQQ==
-
-papi@^0.29.0:
-  version "0.29.0"
-  resolved "https://registry.yarnpkg.com/papi/-/papi-0.29.0.tgz#6bbc332f415d1f3563dea2d2fb8df760d939aebd"
-  integrity sha512-NnZp1pBF0Bt8yV+XX6ejuWfpO6YOt6zUKqZLnpYyZz8MHyWa9jvjNH+oi4NDU3+47CAlpivrl0evekamSbOViQ==
 
 parse-json@^2.2.0:
   version "2.2.0"
