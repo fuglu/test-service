@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
   res.send({ time: Date.now() });
 });
 
+app.get("/health", (req, res) => {
+  res.send({ health: true });
+});
+
 logger.info("Starting server");
 const server = app.listen(3000, () => {
   logger.info("Listening on port 3000");
