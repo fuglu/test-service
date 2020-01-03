@@ -20,7 +20,7 @@ const server = app.listen(3000, () => {
   logger.info("Listening on port 3000");
 });
 
-const shutdown = (signal: NodeJS.Signals) => {
+const shutdown = (signal: NodeJS.Signals): void => {
   logger.info(`Catched ${signal}`);
   logger.info("Closing server");
   server.close(() => {

@@ -5,20 +5,23 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node-dev src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
     "@types/bunyan": "^1.8.6",
     "@types/express": "^4.17.2",
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
     "dockerlint": "^0.3.9",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
     "husky": "^3.1.0",
     "jest": "^24.9.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.4",
     "ts-node-dev": "^1.0.0-pre.44",
-    "tslint": "^5.20.1",
-    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.4"
   },
   "dependencies": {
@@ -32,16 +35,15 @@
   },
   "lint-staged": {
     "*.ts": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{ts,json,md}": [
       "prettier --write",
-      "tslint",
       "git add"
     ],
     "Dockerfile": [
       "dockerlint -p",
-      "git add"
-    ],
-    "*.{json,yml,md}": [
-      "prettier --write",
       "git add"
     ]
   }
