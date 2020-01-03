@@ -1,9 +1,0 @@
-version: "2.1"
-
-services:
-  test-service:
-    image: test-service
-    build: .
-    environment:
-      NODE_ENV: production
-    network_mode: host
