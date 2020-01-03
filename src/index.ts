@@ -1,3 +1,4 @@
+import { createTerminus } from "@godaddy/terminus";
 import bunyan from "bunyan";
 import express from "express";
 
@@ -20,14 +21,4 @@ const server = app.listen(3000, () => {
   logger.info("Listening on port 3000");
 });
 
-const shutdown = (signal: NodeJS.Signals): void => {
-  logger.info(`Catched ${signal}`);
-  logger.info("Closing server");
-  server.close(() => {
-    logger.info("Closed server");
-    process.exit(0);
-  });
-};
-
-process.on("SIGTERM", shutdown);
-process.on("SIGINT", shutdown);
+createTerminus(server);
