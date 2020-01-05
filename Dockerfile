@@ -1,11 +1,18 @@
-FROM node:10.13-alpine
+FROM node:lts-alpine AS builder
 WORKDIR /usr/src/app
-COPY ["package.json", "yarn.lock", "./"]
-RUN ["yarn"]
+COPY package*.json ./
+RUN npm ci
 COPY . .
+RUN npm run lint
+RUN npm run test
+RUN npm run build
+
+FROM node:lts-alpine
 ENV NODE_ENV=production
-RUN ["yarn", "build"]
-RUN ["yarn", "--production"]
-EXPOSE 3000
+WORKDIR /usr/src/app
+COPY package*.json ./
+RUN npm ci --production
+COPY --from=builder /usr/src/app/dist/ dist/
 USER node
-CMD ["node", "dist/index.js"]
+EXPOSE 3000
+ENTRYPOINT ["node", "dist/index.js"]
