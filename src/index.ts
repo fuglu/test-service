@@ -1,24 +1,10 @@
 import { createTerminus } from "@godaddy/terminus";
-import bunyan from "bunyan";
-import express from "express";
+import { app } from "./app";
 
-const logger = bunyan.createLogger({ name: "test-service:app" });
+const PORT = process.env.PORT || 3000;
 
-logger.info("Starting up");
-
-const app = express();
-
-app.get("/", (req, res) => {
-  res.send({ time: Date.now() });
-});
-
-app.get("/health", (req, res) => {
-  res.send({ health: true });
-});
-
-logger.info("Starting server");
-const server = app.listen(3000, () => {
-  logger.info("Listening on port 3000");
-});
+const server = app.listen(PORT, () =>
+  console.log(`Example app listening on port ${PORT}!`)
+);
 
 createTerminus(server);
