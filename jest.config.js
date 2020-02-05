@@ -1,10 +1,18 @@
 module.exports = {
   roots: ["<rootDir>/src"],
-  testMatch: [
-    "**/__tests__/**/*.+(ts|tsx|js)",
-    "**/?(*.)+(spec|test).+(ts|tsx|js)"
-  ],
+  testMatch: ["**/*.test.ts"],
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest"
+    "^.+\\.ts$": "ts-jest"
+  },
+  collectCoverage: true,
+  coveragePathIgnorePatterns: ["/node_modules/", "src/index.ts"],
+  collectCoverageFrom: ["**/*.ts"],
+  coverageThreshold: {
+    global: {
+      branches: 80,
+      functions: 80,
+      lines: 80,
+      statements: 80
+    }
   }
 };
